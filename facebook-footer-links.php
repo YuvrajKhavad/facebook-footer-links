@@ -18,7 +18,7 @@ $ffl_options = get_option('ffl_settings');
 // load Scripts
 require_once(plugin_dir_path(__FILE__). '/includes/facebook-footer-link-scripts.php');
 
-// HTML code for front end 
+// HTML code for front end
 require_once(plugin_dir_path(__FILE__). '/includes/facebook-footer-link-content.php');
 
 if(is_admin())
