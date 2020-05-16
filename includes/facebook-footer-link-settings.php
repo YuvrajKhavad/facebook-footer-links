@@ -1,4 +1,5 @@
 <?php
+add_action('admin_menu', 'ffl_options_menu_link');
 
 // Create menu link
 function ffl_options_menu_link()
@@ -59,7 +60,7 @@ function ffl_options_content()
     echo ob_get_clean();
 }
 
-add_action('admin_menu', 'ffl_options_menu_link');
+
 
 // Register Settings
 add_action('admin_init', 'ffl_settings_settings');

@@ -1,5 +1,4 @@
 <?php
-
 // Add Scripts
 function ffl_add_scripts()
 {

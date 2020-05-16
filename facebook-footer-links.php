@@ -15,15 +15,15 @@ if(!defined('ABSPATH'))
 // Global Options Variable
 $ffl_options = get_option('ffl_settings');
 
+if(is_admin())
+{
+    // Load admin Settings
+    require_once(plugin_dir_path(__FILE__). '/includes/facebook-footer-link-settings.php');
+}
+
 // load Scripts
 require_once(plugin_dir_path(__FILE__). '/includes/facebook-footer-link-scripts.php');
 
 // HTML code for front end
 require_once(plugin_dir_path(__FILE__). '/includes/facebook-footer-link-content.php');
-
-if(is_admin())
-{
-    // Load Settings
-    require_once(plugin_dir_path(__FILE__). '/includes/facebook-footer-link-settings.php');
-}
 ?>

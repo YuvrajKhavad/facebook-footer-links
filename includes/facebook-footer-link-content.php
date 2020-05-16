@@ -1,4 +1,5 @@
 <?php
+add_filter('the_content', 'ffl_add_footer');
 function ffl_add_footer($content)
 {
     global $ffl_options;
@@ -20,5 +21,4 @@ function ffl_add_footer($content)
     }
     return $content;
 }
-add_filter('the_content', 'ffl_add_footer');
 ?>
