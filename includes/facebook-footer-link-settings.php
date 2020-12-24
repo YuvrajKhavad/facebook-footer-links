@@ -25,13 +25,25 @@ function ffl_options_content()
     <div class="wrap">
         <h2><?php _e('Facebook Footer Link Settings', 'ffl_domain');?></h2>
         <p><?php _e('Settings for the facebook footer link plugin', 'ffl_domain');?></p>
+
+        <?php 
+        $enable = false;
+        $show_on_feed = false;
+        if(isset($ffl_options['enable'])){
+            $enable = $ffl_options['enable'];
+        } 
+        if(isset($ffl_options['show_on_feed'])){
+            $show_on_feed = $ffl_options['show_on_feed'];
+         }
+         
+        ?>
         <form method="post" action="options.php">
             <?php settings_fields('ffl_settings_group');?>
             <table class="form-table">
                 <tbody>
                     <tr>
                         <th scope="row"><lable for="ffl_settings[enable]"><?php _e('Enable','ffl_domain');?></lable></th>
-                        <td><input name="ffl_settings[enable]" type="checkbox" id="ffl_settings[enable]" value="1" <?php checked('1', $ffl_options['enable']);?>></td>
+                        <td><input name="ffl_settings[enable]" type="checkbox" id="ffl_settings[enable]" value="1" <?php checked('1', $enable);?>></td>
                     </tr>
 
                     <tr>
@@ -48,7 +60,7 @@ function ffl_options_content()
 
                     <tr>
                         <th scope="row"><lable for="ffl_settings[show_on_feed]"><?php _e('Show In Posts Feed','ffl_domain');?></lable></th>
-                        <td><input name="ffl_settings[show_on_feed]" type="checkbox" id="ffl_settings[show_on_feed]" value="1" <?php checked('1', $ffl_options['show_on_feed']);?>></td>
+                        <td><input name="ffl_settings[show_on_feed]" type="checkbox" id="ffl_settings[show_on_feed]" value="1" <?php checked('1', $show_on_feed);?>></td>
                     </tr>
 
                 </tbody>
