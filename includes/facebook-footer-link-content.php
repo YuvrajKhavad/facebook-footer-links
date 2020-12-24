@@ -8,13 +8,25 @@ function ffl_add_footer($content)
     $footer_output .= '<span class="dashicons dashicons-facebook"></span> Find me one <a style="color:'.$ffl_options['link_color'].'"target="_blank" href="'.$ffl_options['facebook_url'].'">Facebook</a>';
     $footer_output .= '</div>';
 
-    if($ffl_options['enable'])
+    $enable = false;
+    if(isset($ffl_options['enable']))
     {
-        if(is_single() || is_home() && $ffl_options['show_on_feed'])
+        $enable = $ffl_options['enable'];
+    }
+
+    $show_on_feed = false;
+    if(isset($ffl_options['show_on_feed']))
+    {
+        $show_on_feed = $ffl_options['show_on_feed'];
+    }
+
+    if($enable)
+    {
+        if(is_single() || is_home() && $show_on_feed)
         {
             return $content . $footer_output;
         }
-        else if(is_single() && $ffl_options['show_on_feed'])
+        else if(is_single() && $show_on_feed)
         {
             return $content . $footer_output;
         }
