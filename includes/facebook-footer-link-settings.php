@@ -16,7 +16,6 @@ function ffl_options_menu_link()
 // Create Options Page Content
 function ffl_options_content()
 {
-
     // Init Options Global
     global $ffl_options;
 
@@ -71,8 +70,6 @@ function ffl_options_content()
     <?php
     echo ob_get_clean();
 }
-
-
 
 // Register Settings
 add_action('admin_init', 'ffl_settings_settings');
