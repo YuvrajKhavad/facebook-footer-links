@@ -34,7 +34,7 @@ function ffl_options_content()
         if(isset($ffl_options['show_on_feed'])){
             $show_on_feed = $ffl_options['show_on_feed'];
          }
-         
+
         ?>
         <form method="post" action="options.php">
             <?php settings_fields('ffl_settings_group');?>
